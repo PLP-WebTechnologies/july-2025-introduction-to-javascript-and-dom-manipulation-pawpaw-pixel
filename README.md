@@ -1,63 +1,98 @@
-# 🚀 Assignment: Mastering JavaScript Fundamentals
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Project Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 id="main-title">Welcome to My JS Project</h1>
+  <p id="message">Click the button below to run the script.</p>
+  <button onclick="startDemo()">Run Script</button>
+  <ul id="list"></ul>
 
-Welcome to your next step toward JavaScript mastery! In this assignment, you'll explore essential concepts that form the backbone of interactive, dynamic web pages—functions, loops, and the Document Object Model (DOM). Ready to code like a pro? Let’s dive in.
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f0f0f0;
+}
 
----
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-## 🎯 Part 1: Mastering JavaScript Basics
+ul {
+  list-style: none;
+  padding: 0;
+}
 
-Start with the building blocks of JavaScript—variables, data types, operators, and conditionals. You’ll write a few simple programs that capture user input, make decisions using `if/else`, and output results using `console.log()` or by modifying the webpage content.
+// Part 1: Variable declarations and conditionals
+let userName = "Alex";
+let age = 20;
 
-**Goal:** Demonstrate your understanding of how JavaScript flows, processes logic, and interacts with data.
+if (age >= 18) {
+  console.log(`${userName} is an adult.`);
+} else {
+  console.log(`${userName} is a minor.`);
+}
 
----
+// Part 2: Custom functions
 
-## ❤️ Part 2: JavaScript Functions — The Heart of Reusability
+// Function 1 - Greet the user
+function greetUser(name) {
+  return `Hello, ${name}! Welcome to the JS demo.`;
+}
 
-Functions are your best friends in programming. Write a few custom functions that take inputs, process them, and return or display results. You’ll also create functions for common tasks (like calculating totals, formatting strings, or toggling content).
+// Function 2 - Add items to a list
+function addItemsToList(items) {
+  const list = document.getElementById("list");
+  list.innerHTML = ""; // Clear existing list
+  for (let item of items) {
+    const li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+  }
+}
 
-**Goal:** Build reusable blocks of logic that make your code cleaner, smarter, and DRY (Don't Repeat Yourself).
+// Part 3: Loop examples
 
----
+// Loop 1 - Simple for loop
+function countToFive() {
+  for (let i = 1; i <= 5; i++) {
+    console.log("Count: " + i);
+  }
+}
 
-## 🔁 Part 3: JavaScript Loops — Embrace the Power of Repetition!
+// Loop 2 - Array iteration
+const fruits = ["Apple", "Banana", "Cherry"];
+for (let fruit of fruits) {
+  console.log("Fruit:", fruit);
+}
 
-Use `for`, `while`, or `forEach` loops to solve repetitive tasks like iterating through arrays, generating dynamic content, or simulating simple countdowns or animations.
+// Part 4: DOM interactions (3+)
+function startDemo() {
+  // DOM Interaction 1: Change text content
+  document.getElementById("message").textContent = "Script is running...";
 
-**Goal:** Practice controlling flow with repetition and iteration—key to working with lists, animations, and form elements.
+  // DOM Interaction 2: Change style
+  document.getElementById("main-title").style.color = "green";
 
----
+  // DOM Interaction 3: Update list with fruits
+  addItemsToList(fruits);
 
-## 🌐 Part 4: Mastering the DOM with JavaScript
+  // Use a function
+  alert(greetUser(userName));
 
-It’s time to bring your page to life! Use JavaScript to select elements, respond to user actions, and dynamically update the content of your web page. Tasks may include changing text, toggling classes, listening to click events, or creating elements on the fly.
+  // Use a looped console log
+  countToFive();
+}
 
-**Goal:** Show your skill in making a static HTML page interactive using pure JavaScript and DOM manipulation.
 
----
-
-## Deliverables
-
-* A single project folder containing:
-
-  * `index.html` — your structured HTML content
-  * `style.css` — (optional) if you'd like to style your content
-  * `script.js` — your JavaScript file including:
-
-    * Variable declarations and conditionals (Part 1)
-    * At least 2 custom functions (Part 2)
-    * At least 2 loop examples (Part 3)
-    * At least 3 DOM interactions (Part 4)
-
-Each part of the assignment should be clearly commented and organized.
-
----
-
-## Outcome
-
-* Clear understanding of variables, conditionals, functions, loops, and DOM methods
-* Code readability and comments explaining your logic
-* Effective use of functions and loops to reduce repetition
-* DOM manipulation that improves interactivity
-* Clean structure and consistent indentation
 
